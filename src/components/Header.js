@@ -1,38 +1,74 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
-import headerStyles from "../styles/components/header.module.scss"
+import {
+  Box,
+  Flex,
+  Button,
+  Heading,
+  Icon,
+  useColorMode,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from "@chakra-ui/core"
+import ColorModeIcon from "../assets/svg/color-mode.svg"
 
-export default function Header(props) {
+export default function Header({ heading }) {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <header
-      className={`${headerStyles.header} ${props.page === 'info' &&
-        headerStyles.info_page}`}
-    >
-      <nav
-        className={headerStyles.header__nav}
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <Link to="/">
-          <h1>{props.title}</h1>
-        </Link>
-        <div>
-          <h1>
-            <Link
-              to={
-                props.page === 'info'
-                  ? "/"
-                  : "/info"
-              }
-              activeClassName={headerStyles.navItemActive}
+    <Box id="header" as="header" pt="4">
+      <Box maxWidth="var(--max-width)" width="var(--width)" m="0 auto">
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          py="4"
+          as="nav"
+        >
+          <Button mr="4" variant="link" as={Link} to="/">
+            Nick Wallentin
+          </Button>
+          <Flex flex="1">
+            <Button variant="ghost" as={Link} to="/">
+              Blog
+            </Button>
+            <Button variant="ghost" as={Link} to="/">
+              About
+            </Button>
+            <Button variant="ghost" as={Link} to="/">
+              Projects
+            </Button>
+          </Flex>
+          <Flex>
+            <motion.div
+              initial={false}
+              animate={colorMode === "light" ? { rotate: 180 } : { rotate: 0 }}
             >
-              {props.page === 'info'
-                ? "close"
-                : "info"}
-            </Link>
-          </h1>
-        </div>
-      </nav>
-    </header>
+              <Box size="20px" onClick={toggleColorMode}>
+                <ColorModeIcon fill="var(--c-subtle)"></ColorModeIcon>
+              </Box>
+            </motion.div>
+          </Flex>
+        </Flex>
+        <Box py={24}>
+          <Breadcrumb
+            spacing="8px"
+            mb="2"
+            separator={
+              <Icon color="var(--c-subtle)" name="chevron-right"></Icon>
+            }
+          >
+            <BreadcrumbItem>
+              <BreadcrumbLink as={Link} to="/">
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+          <Heading as="h1" size="2xl">
+            {heading}
+          </Heading>
+        </Box>
+      </Box>
+    </Box>
   )
 }

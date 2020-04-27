@@ -35,7 +35,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   //create new pages with unique slug
-  response.data.allMarkdownRemark.edges.forEach(edge => {
+  response.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
       path: `/blog/${edge.node.fields.slug}`,
