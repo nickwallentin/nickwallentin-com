@@ -2,6 +2,13 @@
 label: Blog Post
 hide_body: false
 fields:
+- name: hero
+  type: file
+  config:
+    maxSize: '10'
+  label: hero
+  description: Enter hero image for blog post here
+  default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 - type: text
   name: title
   label: Title
@@ -20,13 +27,6 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: hero
-  type: file
-  config:
-    maxSize: '10'
-  label: hero
-  description: Enter hero image for blog post here
-  default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
