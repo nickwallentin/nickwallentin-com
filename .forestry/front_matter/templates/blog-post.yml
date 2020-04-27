@@ -4,23 +4,15 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
-- name: author
-  type: select
-  default: ''
+  label: Title
+- name: subtitle
+  type: text
   config:
-    required: true
-    options: []
-    source:
-      type: documents
-      section: author-list
-      file: content/data/authors.yaml
-      path: authors
-  label: author
-  description: Enter author of post
+    required: false
+  label: Subtitle
 - name: date
   type: datetime
-  label: date
+  label: Date
   description: Date post was created
   config:
     required: false
@@ -28,11 +20,11 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: hero_image
+- name: hero
   type: file
   config:
     maxSize: '10'
-  label: hero image
+  label: hero
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
