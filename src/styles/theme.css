@@ -64,6 +64,7 @@ body {
   background: var(--bg-main);
   min-height: 100vh;
   font-size: 1.4rem;
+  line-height: 2rem;
 }
 h1,
 h2,

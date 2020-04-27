@@ -11,10 +11,11 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Text,
 } from "@chakra-ui/core"
 import ColorModeIcon from "../assets/svg/color-mode.svg"
 
-export default function Header({ heading }) {
+export default function Header({ heading, subtitle }) {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box id="header" as="header" pt="4">
@@ -67,6 +68,9 @@ export default function Header({ heading }) {
           <Heading as="h1" size="2xl">
             {heading}
           </Heading>
+          <Text mt="4" color="var(--c-subtle)">
+            {subtitle}
+          </Text>
         </Box>
       </Box>
     </Box>

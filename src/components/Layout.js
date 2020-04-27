@@ -8,7 +8,7 @@ export default function Layout(props) {
   const { title, description } = useSiteMetadata()
   return (
     <Box>
-      <Header heading={props.heading} />
+      <Header heading={props.heading} subtitle={props.subtitle} />
       <Box
         maxWidth="var(--max-width)"
         width="var(--width)"

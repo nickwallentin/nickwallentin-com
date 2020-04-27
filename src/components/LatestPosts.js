@@ -34,7 +34,7 @@ export default function BlogList() {
                 <motion.div whileHover="hover" animate="rest">
                   <Box
                     as={Link}
-                    my="10"
+                    my="20"
                     display="block"
                     to={`/blog/${blog.node.fields.slug}`}
                   >
