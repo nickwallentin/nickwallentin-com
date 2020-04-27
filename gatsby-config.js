@@ -19,6 +19,7 @@ module.exports = {
     "gatsby-transformer-yaml",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-chakra-ui",
+    "gatsby-plugin-smoothscroll",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

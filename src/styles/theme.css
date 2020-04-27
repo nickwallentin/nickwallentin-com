@@ -2,6 +2,7 @@
   --max-width: 90%;
   --width: 1100px;
   --font: Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
 
   --c-bg-main-light: rgba(255, 255, 255, 1);
   --c-bg-secondary-light: #fafafa;
@@ -13,7 +14,7 @@
   --c-text-subtle-light: #5a6072;
 
   --c-text-heading-dark: #f2f5f7;
-  --c-text-body-dark: #ffffff;
+  --c-text-body-dark: #e0e0e0;
   --c-text-subtle-dark: #9ca8b4;
 
   --c-accent: rgb(74, 237, 180);
